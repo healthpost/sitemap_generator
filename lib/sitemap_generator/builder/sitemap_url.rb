@@ -139,6 +139,8 @@ module SitemapGenerator
             attributes = { :rel => rel, :href => alternate[:href].to_s }
             attributes[:hreflang] = alternate[:lang].to_s if SitemapGenerator::Utilities.present?(alternate[:lang])
             attributes[:media] = alternate[:media].to_s if SitemapGenerator::Utilities.present?(alternate[:media])
+            attributes[:type] = alternate[:type].to_s if SitemapGenerator::Utilities.present?(alternate[:type])
+            attributes[:title] = alternate[:title].to_s if SitemapGenerator::Utilities.present?(alternate[:title])
             builder.xhtml :link, attributes
           end
 
